@@ -34,6 +34,31 @@
     .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--muted);text-decoration:none}
     footer{padding:28px 0;color:var(--muted);text-align:center}
     @media (max-width:820px){.grid{grid-template-columns:1fr}.menu{flex-wrap:wrap}}
+    /* Contact block styles (keep with your site's stylesheet or paste into <head>) */
+  .contact {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .contact a {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border-radius:10px;
+    text-decoration:none;
+    color:inherit;
+    border:1px solid rgba(255,255,255,0.03);
+    background:rgba(255,255,255,0.01);
+    font-size:14px;
+  }
+  .contact a:hover {
+    background: rgba(255,255,255,0.03);
+  }
+  .contact svg { width:18px; height:18px; display:block; flex-shrink:0; }
+  .contact .label { color: var(--muted); font-size:13px; }
   </style>
 </head>
 <body>
@@ -61,7 +86,7 @@
           <article id="bio">
             <h1>About me</h1>
             <p class="lead">I am a PhD student at Université Côte d'Azur, spervised by prof. Frederic Giroire and Prof. Ramon Aparicio-Pardo. During my PhD, I worked on optimization of energy consumption for Machine Learning inference. My research focuses on developing algorithms for scheduling ML inference requests on cloud systems along with model compression. I also worked on estimating ML models energy consumption for different tasks and projecting the enrgy gains by applying model selection.</p>
-            <p class="lead">I also enjoy poetry, running practicing table tennis. I collaborate with groups in systems, ML, and applied energy-efficiency research.</p>
+            <!-- <p class="lead">I also enjoy poetry, running practicing table tennis. I collaborate with groups in systems, ML, and applied energy-efficiency research.</p> -->
           </article>
 
           <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
@@ -139,7 +164,6 @@
               function escapeHtml(s){return s.replace(/[&<>\"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c])}
             </script> -->
           </article>
-        </section>
         
         <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
         
@@ -174,6 +198,41 @@
             </li>
           </ul>
         </article>
+
+        <div class="contact" role="contentinfo" aria-label="Contact and profiles">
+            <!-- GitHub -->
+            <a href="https://github.com/tsb4" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.72-4.04-1.6-4.04-1.6-.55-1.4-1.35-1.77-1.35-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.82 5.62-5.5 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0012 .5z"/>
+              </svg>
+              <span class="label">GitHub</span>
+            </a>
+          
+            <!-- Google Scholar -->
+            <a href="https://scholar.google.com/citations?user=yvaWpXEAAAAJ&hl=pt-BR&oi=ao" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar (opens in a new tab)">
+              <!-- simple 'scholar'/book icon -->
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2l7 4v11a3 3 0 01-1.71 2.73L12 22l-5.29-2.27A3 3 0 015 17V6l7-4zM12 7.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/>
+              </svg>
+              <span class="label">Google Scholar</span>
+            </a>
+          
+            <!-- Email -->
+            <a href="mailto:tiago.da-silva-barros@inria.fr" aria-label="Send email">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <span class="label">tiago.da-silva-barros@inria.fr</span>
+            </a>
+          
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/tiago-da-silva-barros-9823691a8/?originalSubdomain=fr" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5A2.5 2.5 0 002.5 6v12a2.5 2.5 0 002.48 2.5h12.04A2.5 2.5 0 0019.5 18V6a2.5 2.5 0 00-2.48-2.5H4.98zM8 9.5H6v7h2v-7zM7 7.75a1 1 0 110-2 1 1 0 010 2zM18 16.5h-2v-3.4c0-.8 0-1.85-1.13-1.85-1.13 0-1.3.88-1.3 1.78v3.47h-2v-7h1.92v.96h.03c.27-.51.94-1.05 1.93-1.05 2.06 0 2.44 1.36 2.44 3.13v3.0z"/>
+              </svg>
+              <span class="label">LinkedIn</span>
+            </a>
+          </div>
       </section>
 
         <!-- <aside class="card">
